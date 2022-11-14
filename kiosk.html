@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<link rel="stylesheet" href="kiosk.css" />
+		<script src="calc.js" defer></script>
 	</head>
 	<body>
 		<header>
@@ -19,78 +20,114 @@
 
 		<!-- Food -->
 		<section class="chooseFood">
-			<div class="chooseFood__center">
-				<div class="chooseFood__warp">
+			<div class="chooseFood__padding">
+				<div class="chooseFood__warp div__center">
 					<div class="chooseFood__img">
-						<img
-							src="https://cdn.pixabay.com/photo/2016/08/25/00/22/chicken-1618459_960_720.jpg"
-							alt="chicken"
-						/>
-						<div class="chooseFood__text__wrap">
-							<h1>치킨</h1>
-							<p>8,000원</p>
-						</div>
+						<button type="button" id="c1" value="8000" onclick="calc(this)">
+							<img
+								src="https://cdn.pixabay.com/photo/2016/08/25/00/22/chicken-1618459_960_720.jpg"
+								alt="chicken"
+							/>
+							<div class="chooseFood__text__wrap">
+								<h1>치킨</h1>
+								<div class="spin__wrap">
+									8,000원
+									<!-- <input class="spin" type="number" min="1" value="1" /> -->
+								</div>
+							</div>
+						</button>
 					</div>
 					<div class="chooseFood__img">
-						<img
-							src="https://cdn.pixabay.com/photo/2016/03/26/23/19/hamburger-1281855_960_720.jpg"
-							alt="hamberger"
-						/>
-						<div class="chooseFood__text__wrap">
-							<h1>햄버거</h1>
-							<p>8,000원</p>
-						</div>
-					</div>
-				</div>
-				<div class="chooseFood__warp">
-					<div class="chooseFood__img">
-						<img
-							src="https://cdn.pixabay.com/photo/2016/08/25/00/22/chicken-1618459_960_720.jpg"
-							alt="chicken"
-						/>
-						<div class="chooseFood__text__wrap">
-							<h1>치킨</h1>
-							<p>8,000원</p>
-						</div>
-					</div>
-					<div class="chooseFood__img">
-						<img
-							src="https://cdn.pixabay.com/photo/2016/03/26/23/19/hamburger-1281855_960_720.jpg"
-							alt="hamberger"
-						/>
-						<div class="chooseFood__text__wrap">
-							<h1>햄버거</h1>
-							<p>8,000원</p>
-						</div>
+						<button type="button" id="c2" value="8000" onclick="calc(this)">
+							<img
+								src="https://cdn.pixabay.com/photo/2016/03/26/23/19/hamburger-1281855_960_720.jpg"
+								alt="hamberger"
+							/>
+							<div class="chooseFood__text__wrap">
+								<h1>햄버거</h1>
+								<div class="spin__wrap">
+									8,000원
+									<!-- <input class="spin" type="number" min="1" value="1" /> -->
+								</div>
+							</div>
+						</button>
 					</div>
 				</div>
 				<div class="chooseFood__warp">
 					<div class="chooseFood__img">
-						<img
-							src="https://cdn.pixabay.com/photo/2016/08/25/00/22/chicken-1618459_960_720.jpg"
-							alt="chicken"
-						/>
-						<div class="chooseFood__text__wrap">
-							<h1>치킨</h1>
-							<p>8,000원</p>
-						</div>
+						<button type="button" id="c3" value="8000" onclick="calc(this)">
+							<img
+								src="https://cdn.pixabay.com/photo/2016/08/25/00/22/chicken-1618459_960_720.jpg"
+								alt="chicken"
+							/>
+							<div class="chooseFood__text__wrap">
+								<h1>치킨</h1>
+								<div class="spin__wrap">
+									8,000원<!--  <input class="spin" type="number" min="1" value="1" /> -->
+								</div>
+							</div>
+						</button>
 					</div>
 					<div class="chooseFood__img">
-						<img
-							src="https://cdn.pixabay.com/photo/2016/03/26/23/19/hamburger-1281855_960_720.jpg"
-							alt="hamberger"
-						/>
-						<div class="chooseFood__text__wrap">
-							<h1>햄버거</h1>
-							<p>8,000원</p>
-						</div>
+						<button type="button" id="c4" value="8000" onclick="calc(this)">
+							<img
+								src="https://cdn.pixabay.com/photo/2016/03/26/23/19/hamburger-1281855_960_720.jpg"
+								alt="hamberger"
+							/>
+							<div class="chooseFood__text__wrap">
+								<h1>햄버거</h1>
+								<div class="spin__wrap">
+									8,000원
+									<!-- <input class="spin" type="number" min="1" value="1" /> -->
+								</div>
+							</div>
+						</button>
+					</div>
+				</div>
+				<div class="chooseFood__warp">
+					<div class="chooseFood__img">
+						<button type="button" id="c5" value="8000" onclick="calc(this)">
+							<img
+								src="https://cdn.pixabay.com/photo/2016/08/25/00/22/chicken-1618459_960_720.jpg"
+								alt="chicken"
+							/>
+							<div class="chooseFood__text__wrap">
+								<h1>치킨</h1>
+								<div class="spin__wrap">
+									8,000원
+									<!-- <input class="spin" type="number" min="1" value="1" /> -->
+								</div>
+							</div>
+						</button>
+					</div>
+					<div class="chooseFood__img">
+						<button type="button" id="c6" value="8000" onclick="calc(this)">
+							<img
+								src="https://cdn.pixabay.com/photo/2016/03/26/23/19/hamburger-1281855_960_720.jpg"
+								alt="hamberger"
+							/>
+							<div class="chooseFood__text__wrap">
+								<h1>햄버거</h1>
+								<div class="spin__wrap">
+									8,000원
+									<!-- <input class="spin" type="number" min="1" value="1" /> -->
+								</div>
+							</div>
+						</button>
 					</div>
 				</div>
 			</div>
 		</section>
 
 		<!-- money -->
-		<section class="money"></section>
+		<section class="money">
+			<div class="money__input__wrap">
+				<label>
+					<h1>총 금액</h1>
+					<input type="text" id="sumtext" value="" />
+				</label>
+			</div>
+		</section>
 
 		<!-- charge -->
 		<section class="charge"></section>
