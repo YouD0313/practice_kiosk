@@ -58,7 +58,7 @@ section {
 	padding: 70px 50px;
 }
 .chooseFood__warp {
-	width: 1200px;
+	width: 950px;
 	display: flex;
 	margin: 0 auto;
 	padding: 20px 10px;
@@ -70,26 +70,32 @@ section {
 	flex-direction: row-reverse;
 }
 
-.chooseFood__img {
-	position: relative;
-}
-
-.chooseFood__img button,
 .chooseFood__img img {
-	width: 500px;
+	width: 400px;
+	outline: 3px solid var(--color-green);
 }
 
-.chooseFood__text__wrap p {
-	font-size: 1.7rem;
+.chooseFood__text__wrap span {
+	font-size: 1.3rem;
+	margin-right: 20px;
 }
 
 .spin__wrap {
 	display: flex;
 }
 
+.spin,
+.cartIcon {
+	outline: 1px solid var(--color-green);
+}
+
 .spin {
 	width: 30px;
 	outline: 1px solid var(--color-green);
+}
+
+.cartIcon i {
+	font-size: 1.5rem;
 }
 
 /* money */
@@ -98,7 +104,7 @@ section {
 }
 
 .money__input__wrap {
-	width: 1200px;
+	width: 950px;
 	margin: 0 auto;
 	padding: 20px 50px;
 }
