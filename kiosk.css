@@ -94,8 +94,12 @@ section {
 	outline: 1px solid var(--color-green);
 }
 
+.cartIcon {
+	padding: 0;
+}
+
 .cartIcon i {
-	font-size: 1.5rem;
+	font-size: 2rem;
 }
 
 /* money */
