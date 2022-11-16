@@ -48,13 +48,13 @@ input {
 }
 
 .head__borderbottom img {
-	width: 15%;
+	width: 20vmax;
 	margin: 30px;
 }
 
 section,
 header {
-	width: 100%;
+	width: 100vmax;
 }
 
 /* food */
@@ -62,7 +62,7 @@ header {
 	padding: 70px 50px;
 }
 .chooseFood__warp {
-	width: 950px;
+	width: 80vmax;
 	display: flex;
 	margin: 0 auto;
 	padding: 20px 10px;
@@ -75,7 +75,7 @@ header {
 }
 
 .chooseFood__img img {
-	width: 400px;
+	width: 35vmax;
 	outline: 3px solid var(--color-green);
 }
 
@@ -112,7 +112,7 @@ header {
 }
 
 .money__input__wrap {
-	width: 950px;
+	width: 80vmax;
 	margin: 0 auto;
 	padding: 20px 50px;
 }
@@ -138,4 +138,25 @@ header {
 
 .charge {
 	margin-right: 50px;
+}
+
+/* media query */
+@media (max-width: 786px) {
+	.chooseFood__warp,
+	.chooseFood__warp:nth-child(2) {
+		flex-direction: column;
+		flex-grow: 1;
+	}
+
+	.chooseFood__img {
+		margin-bottom: 50px;
+	}
+
+	.chooseFood__img:last-of-type {
+		margin-bottom: 0;
+	}
+
+	.chooseFood__img img {
+		width: 50vmax;
+	}
 }
