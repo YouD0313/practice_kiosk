@@ -28,10 +28,11 @@ charge.addEventListener('click', () => {
 	let fee = parseInt(prompt('금액을 투입하세요.', 10000));
 	if (fee) {
 		if (fee < sum) {
-			alert(Math.abs(fee - sum) + '원 부족합니다. 다시 금액을 투입하세요.');
+			alert(Math.abs(fee - sum) + '원 부족합니다.\n다시 금액을 투입하세요.');
 			parseInt(prompt('다시 금액을 투입하세요.', 10000));
 		} else {
-			alert('거스름돈은 ' + (fee - sum) + '원 입니다.');
+			alert('결제완료 되었습니다.\n거스름돈은 ' + (fee - sum) + '원 입니다.');
+			location.reload();
 		}
 	} else {
 		alert('숫자를 입력하세요.');
