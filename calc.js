@@ -26,7 +26,10 @@ button.forEach((cart, idx) => {
 const charge = document.querySelector('.charge');
 charge.addEventListener('click', () => {
 	let fee = parseInt(prompt('금액을 투입하세요.', 10000));
-	if (fee) {
+
+	if (sumText.value == '0원') {
+		alert('선택한 메뉴가 없습니다.\n메뉴를 선택하세요.');
+	} else if (fee) {
 		if (fee < sum) {
 			alert(Math.abs(fee - sum) + '원 부족합니다.\n다시 금액을 투입하세요.');
 			parseInt(prompt('다시 금액을 투입하세요.', 10000));
@@ -35,7 +38,8 @@ charge.addEventListener('click', () => {
 			location.reload();
 		}
 	} else {
-		alert('숫자를 입력하세요.');
+		alert('숫자로 입력하세요.');
+		parseInt(prompt('다시 금액을 투입하세요.', 10000));
 	}
 });
 const reject = document.querySelector('.reject');
