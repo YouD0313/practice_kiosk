@@ -1,6 +1,9 @@
 :root {
 	/* color */
 	--color-green: #6aff00;
+	--color-white: #ffffff;
+	--color-black: #000000;
+	--color-violet: #9500ff;
 }
 * {
 	box-sizing: border-box;
@@ -111,4 +114,27 @@ section {
 	width: 950px;
 	margin: 0 auto;
 	padding: 20px 50px;
+}
+
+.money__input__wrap input {
+	font-size: large;
+}
+
+.money__btn__wrap {
+	display: flex;
+	margin-top: 30px;
+}
+
+.charge,
+.reject {
+	border-radius: 5px;
+	background-color: var(--color-violet);
+	color: var(--color-green);
+	font-size: large;
+	font-weight: 900;
+	padding: 10px 30px;
+}
+
+.charge {
+	margin-right: 50px;
 }
