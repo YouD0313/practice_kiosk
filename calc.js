@@ -8,21 +8,16 @@ const button = document.querySelectorAll('.cartIcon');
 // 	spin.value = 1;
 // });
 
-button.forEach((cart, i) => {
-	cart.addEventListener('click', (event) => {
-		const target = event.target;
-		const link = target.dataset.index;
-		console.log('target', target);
-		console.log('link', link);
-		button.forEach(() => {
-			// if (cart == i) {
-			sum += parseInt(button[i].value) * parseInt(spin[i].value);
-			document.getElementById('sumtext').value = sum + '원';
-			spin[i].value = 1;
-			console.log('sum', sum);
-			console.log('cart', cart);
-			console.log('i', i);
-			// }
-		});
+button.forEach((cart, idx) => {
+	cart.addEventListener('click', () => {
+		sum += parseInt(button[idx].value) * parseInt(spin[idx].value);
+		document.getElementById('sumtext').value = sum + '원';
+		console.log('button.value', button[idx].value);
+		console.log('spin.value', spin[idx].value);
+		spin[idx].value = 1;
+		console.log('sum', sum);
+		console.log('cart', cart);
+		console.log('idx', idx);
+		// }
 	});
 });
