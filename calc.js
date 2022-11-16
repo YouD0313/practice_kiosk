@@ -34,7 +34,7 @@ charge.addEventListener('click', () => {
 				alert(Math.abs(fee - sum) + '원 부족합니다.\n다시 금액을 투입하세요.');
 				let fixFee = parseInt(prompt('다시 금액을 투입하세요.', 10000));
 				if (fixFee < sum) {
-					alert(Math.abs(fixFee - sum) + '원 부족합니다.\n재결제하세요.');
+					alert(Math.abs((fixFee - sum) + '원 부족합니다.\n재결제하세요.');
 				} else {
 					alert(
 						'결제완료 되었습니다.\n거스름돈은 ' + (fixFee - sum) + '원 입니다.'
