@@ -6,11 +6,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>키오스크</title>
 		<link rel="stylesheet" href="kiosk.css" />
-		<script src="calc.js" defer></script>
 		<script
 			src="https://kit.fontawesome.com/7e695e6e41.js"
 			crossorigin="anonymous"
 		></script>
+		<script src="./jquery-3.6.1.min.js"></script>
+		<script src="calc.js" defer></script>
+		<script src="popUp.js" defer></script>
 	</head>
 	<body>
 		<header>
@@ -23,7 +25,7 @@
 		<section class="chooseFood">
 			<div class="chooseFood__padding">
 				<div class="chooseFood__warp">
-					<div class="chooseFood__img">
+					<div class="chooseFood__img" data-index="0">
 						<img
 							src="https://cdn.pixabay.com/photo/2016/08/25/00/22/chicken-1618459_960_720.jpg"
 							alt="chicken"
@@ -45,7 +47,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="chooseFood__img">
+					<div class="chooseFood__img" data-index="1">
 						<img
 							src="https://cdn.pixabay.com/photo/2016/03/26/23/19/hamburger-1281855_960_720.jpg"
 							alt="hamberger"
@@ -69,7 +71,7 @@
 					</div>
 				</div>
 				<div class="chooseFood__warp">
-					<div class="chooseFood__img">
+					<div class="chooseFood__img" data-index="2">
 						<img
 							src="https://cdn.pixabay.com/photo/2016/08/25/00/22/chicken-1618459_960_720.jpg"
 							alt="chicken"
@@ -91,7 +93,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="chooseFood__img">
+					<div class="chooseFood__img" data-index="3">
 						<img
 							src="https://cdn.pixabay.com/photo/2016/03/26/23/19/hamburger-1281855_960_720.jpg"
 							alt="hamberger"
@@ -115,7 +117,7 @@
 					</div>
 				</div>
 				<div class="chooseFood__warp">
-					<div class="chooseFood__img">
+					<div class="chooseFood__img" data-index="4">
 						<img
 							src="https://cdn.pixabay.com/photo/2016/08/25/00/22/chicken-1618459_960_720.jpg"
 							alt="chicken"
@@ -137,7 +139,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="chooseFood__img">
+					<div class="chooseFood__img" data-index="5">
 						<img
 							src="https://cdn.pixabay.com/photo/2016/03/26/23/19/hamburger-1281855_960_720.jpg"
 							alt="hamberger"
@@ -162,14 +164,44 @@
 				</div>
 			</div>
 		</section>
+		<!-- pop up -->
+		<div class="chooseFood__popUp">
+			<div class="chooseFood__popUp__xmark">
+				<button class="xmark" type="button">
+					<i class="fa-solid fa-xmark"></i>
+				</button>
+			</div>
+			<div class="chooseFood__popUp__img">
+				<img
+					src="https://cdn.pixabay.com/photo/2016/03/26/23/19/hamburger-1281855_960_720.jpg"
+					alt="hamberger"
+				/>
+				<div class="chooseFood__text__wrap">
+					<h1>햄버거</h1>
+					<div class="spin__wrap">
+						<span>8,000원</span>
+						<input class="spin" type="number" min="1" value="1" />
+						<button
+							class="cartIcon"
+							type="button"
+							data-index="5"
+							id="c6"
+							value="8000"
+						>
+							<i class="fa-solid fa-cart-shopping"></i>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<!-- money -->
 		<section class="money">
 			<div class="money__input__wrap">
-				<label>
+				<div class="money__fee__wrap">
 					<h1>총 금액</h1>
 					<input type="text" id="sumtext" value="0원" />
-				</label>
+				</div>
 				<div class="money__btn__wrap">
 					<button class="charge" type="button">결제하기</button>
 					<button class="reject" type="button">취소하기</button>

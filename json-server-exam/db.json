@@ -1,0 +1,34 @@
+{
+	"menu": [
+		{
+			"imgUrl":"https://cdn.pixabay.com/photo/2016/08/25/00/22/chicken-1618459_960_720.jpg",
+			"name": "치킨",
+			"price": "8000원"
+		},
+		{
+			"imgUrl":"https://cdn.pixabay.com/photo/2016/03/26/23/19/hamburger-1281855_960_720.jpg",
+			"name": "햄버거",
+			"price": "8000원"
+		}
+		{
+			"imgUrl":"https://cdn.pixabay.com/photo/2016/03/26/23/19/hamburger-1281855_960_720.jpg",
+			"name": "햄버거",
+			"price": "8000원"
+		},
+		{
+			"imgUrl":"https://cdn.pixabay.com/photo/2016/08/25/00/22/chicken-1618459_960_720.jpg",
+			"name": "치킨",
+			"price": "8000원"
+		},
+		{
+			"imgUrl":"https://cdn.pixabay.com/photo/2016/08/25/00/22/chicken-1618459_960_720.jpg",
+			"name": "치킨",
+			"price": "8000원"
+		},
+		{
+			"imgUrl":"https://cdn.pixabay.com/photo/2016/03/26/23/19/hamburger-1281855_960_720.jpg",
+			"name": "햄버거",
+			"price": "8000원"
+		}
+	]
+}

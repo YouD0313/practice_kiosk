@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 :root {
 	/* color */
 	--color-green: #6aff00;
@@ -57,6 +59,52 @@ header {
 	width: 100vmax;
 }
 
+/* header,
+.chooseFood {
+	opacity: 0.5;
+} */
+
+/* food pop-up */
+.chooseFood__popUp {
+	/* display: none; */
+	opacity: 0;
+	pointer-events: none;
+	background-color: var(--color-white);
+	position: fixed;
+	outline: 3px solid var(--color-violet);
+	border-radius: 20px;
+	width: 40vmax;
+	height: 36vmax;
+	top: 0.8vmax;
+	left: 28vmax;
+}
+
+.chooseFood__popUp__img img {
+	width: 26vmax;
+	outline: 3px solid var(--color-green);
+}
+
+.chooseFood__popUp__img {
+	width: 40vmax;
+	padding: 0.8vmax 7vmax;
+}
+
+.chooseFood__popUp__xmark {
+	display: flex;
+	justify-content: flex-end;
+	margin: 0;
+	padding: 0.5vmax 1vmax;
+}
+
+.chooseFood__popUp__xmark i {
+	font-size: 3vmax;
+}
+
+.chooseFood__popUp.pop {
+	opacity: 1;
+	pointer-events: all;
+}
+
 /* food */
 .chooseFood__padding {
 	padding: 70px 50px;
@@ -72,6 +120,10 @@ header {
 .chooseFood__warp:nth-child(2) {
 	display: flex;
 	flex-direction: row-reverse;
+}
+
+.chooseFood__warp:last-of-type {
+	margin-bottom: 90px;
 }
 
 .chooseFood__img img {
@@ -109,12 +161,19 @@ header {
 /* money */
 .money {
 	background-color: var(--color-green);
+	position: fixed;
+	bottom: 0;
 }
 
 .money__input__wrap {
 	width: 80vmax;
 	margin: 0 auto;
 	padding: 20px 50px;
+	display: flex;
+}
+
+.money__fee__wrap h1 {
+	margin-top: 0;
 }
 
 .money__input__wrap input {

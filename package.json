@@ -1,0 +1,20 @@
+{
+  "name": "practice_kiosk",
+  "version": "1.0.0",
+  "description": "array",
+  "main": "calc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YouD0313/practice_kiosk.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YouD0313/practice_kiosk/issues"
+  },
+  "homepage": "https://github.com/YouD0313/practice_kiosk#readme"
+}

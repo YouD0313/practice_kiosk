@@ -10,7 +10,9 @@ const sumText = document.querySelector('#sumtext');
 // });
 
 button.forEach((cart, idx) => {
-	cart.addEventListener('click', () => {
+	cart.addEventListener('click', function () {
+		// sum +=
+		// 	parseInt(this.value) * parseInt(this.parentElement.childNodes[3].value);
 		sum += parseInt(button[idx].value) * parseInt(spin[idx].value);
 		sumText.value = sum + '원';
 		console.log('button.value', button[idx].value);
@@ -19,47 +21,53 @@ button.forEach((cart, idx) => {
 		console.log('sum', sum);
 		console.log('cart', cart);
 		console.log('idx', idx);
-		// }
 	});
 });
 
-const charge = document.querySelector('.charge');
-charge.addEventListener('click', () => {
-	if (sumText.value == '0원') {
-		alert('선택한 메뉴가 없습니다.\n메뉴를 선택하세요.');
-	} else {
-		let fee = parseInt(prompt('금액을 투입하세요.', 10000));
-		if (fee) {
-			if (fee < sum) {
-				alert(Math.abs(fee - sum) + '원 부족합니다.\n다시 금액을 투입하세요.');
-				let fixFee = parseInt(prompt('다시 금액을 투입하세요.', 10000));
-				if (fixFee < sum) {
-					alert(Math.abs(fixFee - sum) + '원 부족합니다.\n재결제하세요.');
-				} else {
-					alert(
-						'결제완료 되었습니다.\n거스름돈은 ' + (fixFee - sum) + '원 입니다.'
-					);
-					location.reload();
-				}
+function ifelse() {
+	let fee = parseInt(prompt('금액을 투입하세요.', 10000));
+	if (fee) {
+		if (fee < sum) {
+			alert(Math.abs(fee - sum) + '원 부족합니다.\n다시 금액을 투입하세요.');
+			let fixFee = parseInt(prompt('다시 금액을 투입하세요.', 10000));
+			if (fixFee < sum) {
+				alert(Math.abs(fixFee - sum) + '원 부족합니다.\n재결제하세요.');
 			} else {
-				alert('결제완료 되었습니다.\n거스름돈은 ' + (fee - sum) + '원 입니다.');
-				location.reload();
+				alert(
+					'결제완료 되었습니다.\n거스름돈은 ' + (fixFee - sum) + '원 입니다.'
+				);
+				sum = 0;
+				sumText.value = sum + '원';
 			}
 		} else {
-			alert('숫자로 입력하세요.');
-			parseInt(prompt('다시 금액을 투입하세요.', 10000));
+			alert('결제완료 되었습니다.\n거스름돈은 ' + (fee - sum) + '원 입니다.');
+			sum = 0;
+			sumText.value = sum + '원';
 		}
+	} else {
+		alert('숫자로 입력하세요.');
+		parseInt(prompt('다시 금액을 투입하세요.', 10000));
+	}
+}
+
+const charge = document.querySelector('.charge');
+charge.addEventListener('click', () => {
+	if (sum == 0) {
+		alert('선택한 메뉴가 없습니다.\n메뉴를 선택하세요.');
+	} else {
+		ifelse();
 	}
 });
 const reject = document.querySelector('.reject');
 reject.addEventListener('click', () => {
-	if (sumText.value == '0원') {
+	if (sum == 0) {
 		alert('선택한 메뉴가 없습니다.\n메뉴를 선택하세요.');
 	} else {
 		if (confirm('정말 취소하겠습니까?')) {
 			alert('취소되었습니다.');
-			console.log('typeof', typeof sumText.value);
-			location.reload();
+			console.log('typeof', typeof sum);
+			sum = 0;
+			sumText.value = sum + '원';
 		}
 	}
 });
