@@ -110,7 +110,7 @@ header {
 	padding: 70px 50px;
 }
 .chooseFood__warp {
-	width: 80vmax;
+	width: 70vmax;
 	display: flex;
 	margin: 0 auto;
 	padding: 20px 10px;
@@ -126,8 +126,12 @@ header {
 	margin-bottom: 90px;
 }
 
+.chooseFood__img {
+	cursor: pointer;
+}
+
 .chooseFood__img img {
-	width: 35vmax;
+	width: 30vmax;
 	outline: 3px solid var(--color-green);
 }
 
@@ -166,7 +170,7 @@ header {
 }
 
 .money__input__wrap {
-	width: 80vmax;
+	width: 75vmax;
 	margin: 0 auto;
 	padding: 20px 50px;
 	display: flex;
