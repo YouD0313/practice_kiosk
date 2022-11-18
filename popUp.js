@@ -22,3 +22,6 @@ xMark.addEventListener('click', () => {
 	header.style.opacity = '1';
 	foodSection.style.opacity = '1';
 });
+
+// json
+let data = JSON.parse(JSON.stringify(TestFile));
