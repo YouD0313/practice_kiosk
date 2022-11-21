@@ -65,6 +65,7 @@ header {
 } */
 
 /* food pop-up */
+
 .chooseFood__popUp {
 	/* display: none; */
 	opacity: 0;
@@ -74,13 +75,14 @@ header {
 	outline: 3px solid var(--color-violet);
 	border-radius: 20px;
 	width: 40vmax;
-	height: 36vmax;
-	top: 0.8vmax;
+	height: 34vmax;
+	top: 7%;
 	left: 28vmax;
 }
 
 .chooseFood__popUp__img img {
 	width: 26vmax;
+	height: 17vmax;
 	outline: 3px solid var(--color-green);
 }
 
@@ -105,6 +107,10 @@ header {
 	pointer-events: all;
 }
 
+.chooseFood.noClick {
+	pointer-events: none;
+}
+
 /* food */
 .chooseFood__padding {
 	padding: 70px 50px;
@@ -117,11 +123,6 @@ header {
 	justify-content: space-between;
 }
 
-.chooseFood__warp:nth-child(2) {
-	display: flex;
-	flex-direction: row-reverse;
-}
-
 .chooseFood__warp:last-of-type {
 	margin-bottom: 90px;
 }
@@ -132,6 +133,7 @@ header {
 
 .chooseFood__img img {
 	width: 30vmax;
+	height: 20vmax;
 	outline: 3px solid var(--color-green);
 }
 
@@ -172,8 +174,9 @@ header {
 .money__input__wrap {
 	width: 75vmax;
 	margin: 0 auto;
-	padding: 20px 50px;
+	padding: 20px 0;
 	display: flex;
+	justify-content: space-evenly;
 }
 
 .money__fee__wrap h1 {
@@ -204,6 +207,18 @@ header {
 }
 
 /* media query */
+@media (max-width: 1024px) {
+	.chooseFood__popUp {
+		height: 41vmax;
+		top: 30%;
+	}
+
+	.money__input__wrap {
+		width: 80vmax;
+		padding: 10px 25px;
+	}
+}
+
 @media (max-width: 786px) {
 	.chooseFood__warp,
 	.chooseFood__warp:nth-child(2) {

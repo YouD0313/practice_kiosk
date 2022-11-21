@@ -24,6 +24,7 @@ button.forEach((cart, idx) => {
 	});
 });
 
+// for문으로 변경하기
 function ifelse() {
 	let fee = parseInt(prompt('금액을 투입하세요.', 10000));
 	if (fee) {
@@ -58,6 +59,7 @@ charge.addEventListener('click', () => {
 		ifelse();
 	}
 });
+
 const reject = document.querySelector('.reject');
 reject.addEventListener('click', () => {
 	if (sum == 0) {

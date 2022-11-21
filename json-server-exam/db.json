@@ -1,32 +1,43 @@
-TestFile = '[
-		{
-			"imgUrl":"https://cdn.pixabay.com/photo/2016/08/25/00/22/chicken-1618459_960_720.jpg",
-			"name": "치킨",
-			"price": "8000원"
-		},
-		{
-			"imgUrl":"https://cdn.pixabay.com/photo/2016/03/26/23/19/hamburger-1281855_960_720.jpg",
-			"name": "햄버거",
-			"price": "8000원"
-		},
-		{
-			"imgUrl":"https://cdn.pixabay.com/photo/2016/03/26/23/19/hamburger-1281855_960_720.jpg",
-			"name": "햄버거",
-			"price": "8000원"
-		},
-		{
-			"imgUrl":"https://cdn.pixabay.com/photo/2016/08/25/00/22/chicken-1618459_960_720.jpg",
-			"name": "치킨",
-			"price": "8000원"
-		},
-		{
-			"imgUrl":"https://cdn.pixabay.com/photo/2016/08/25/00/22/chicken-1618459_960_720.jpg",
-			"name": "치킨",
-			"price": "8000원"
-		},
-		{
-			"imgUrl":"https://cdn.pixabay.com/photo/2016/03/26/23/19/hamburger-1281855_960_720.jpg",
-			"name": "햄버거",
-			"price": "8000원"
-		}
-	]'
+[
+	{
+		"index": 0,
+		"imgUrl": "https://cdn.pixabay.com/photo/2016/08/25/00/22/chicken-1618459_960_720.jpg",
+		"name": "치킨",
+		"price": "13000원",
+		"value": 13000
+	},
+	{
+		"index": 1,
+		"imgUrl": "https://cdn.pixabay.com/photo/2016/03/26/23/19/hamburger-1281855_960_720.jpg",
+		"name": "햄버거",
+		"price": "8000원",
+		"value": 8000
+	},
+	{
+		"index": 2,
+		"imgUrl": "https://cdn.pixabay.com/photo/2014/11/05/15/57/salmon-518032_960_720.jpg",
+		"name": "연어스테이크",
+		"price": "15000원",
+		"value": 15000
+	},
+	{
+		"index": 3,
+		"imgUrl": "https://cdn.pixabay.com/photo/2016/11/06/23/31/breakfast-1804457_960_720.jpg",
+		"name": "치즈토스트",
+		"price": "9000원",
+		"value": 9000
+	},
+	{
+		"index": 4,
+		"imgUrl": "https://cdn.pixabay.com/photo/2016/09/15/19/24/salad-1672505_960_720.jpg",
+		"name": "무화과 샐러드",
+		"price": "11000원",
+		"value": 11000
+	},
+	{
+		"index": 5,
+		"imgUrl": "https://cdn.pixabay.com/photo/2022/11/08/05/34/lasagna-7577748_960_720.jpg",
+		"name": "라자냐",
+		"price": "8000원"
+	}
+]

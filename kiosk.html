@@ -10,10 +10,6 @@
 			src="https://kit.fontawesome.com/7e695e6e41.js"
 			crossorigin="anonymous"
 		></script>
-		<script src="jquery-3.6.1.min.js"></script>
-		<script src="./json-server-exam/db.json" type="text/javascript"></script>
-		<script src="calc.js" defer></script>
-		<script src="popUp.js" defer></script>
 	</head>
 	<body>
 		<header>
@@ -34,7 +30,7 @@
 						<div class="chooseFood__text__wrap">
 							<h1>치킨</h1>
 							<div class="spin__wrap">
-								<span>8,000원</span>
+								<span>13,000원</span>
 								<!-- <input class="spin" type="number" min="1" value="1" />
 								<button
 									class="cartIcon"
@@ -74,13 +70,13 @@
 				<div class="chooseFood__warp">
 					<div class="chooseFood__img" data-index="2">
 						<img
-							src="https://cdn.pixabay.com/photo/2016/08/25/00/22/chicken-1618459_960_720.jpg"
-							alt="chicken"
+							src="https://cdn.pixabay.com/photo/2014/11/05/15/57/salmon-518032_960_720.jpg"
+							alt="salmon"
 						/>
 						<div class="chooseFood__text__wrap">
-							<h1>치킨</h1>
+							<h1>연어</h1>
 							<div class="spin__wrap">
-								<span>8,000원</span>
+								<span>15,000원</span>
 								<!-- <input class="spin" type="number" min="1" value="1" />
 								<button
 									class="cartIcon"
@@ -96,13 +92,13 @@
 					</div>
 					<div class="chooseFood__img" data-index="3">
 						<img
-							src="https://cdn.pixabay.com/photo/2016/03/26/23/19/hamburger-1281855_960_720.jpg"
-							alt="hamberger"
+							src="https://cdn.pixabay.com/photo/2016/11/06/23/31/breakfast-1804457_960_720.jpg"
+							alt="cheese toast"
 						/>
 						<div class="chooseFood__text__wrap">
-							<h1>햄버거</h1>
+							<h1>치즈토스트</h1>
 							<div class="spin__wrap">
-								<span>8,000원</span>
+								<span>9,000원</span>
 								<!-- <input class="spin" type="number" min="1" value="1" />
 								<button
 									class="cartIcon"
@@ -120,13 +116,13 @@
 				<div class="chooseFood__warp">
 					<div class="chooseFood__img" data-index="4">
 						<img
-							src="https://cdn.pixabay.com/photo/2016/08/25/00/22/chicken-1618459_960_720.jpg"
+							src="https://cdn.pixabay.com/photo/2016/09/15/19/24/salad-1672505_960_720.jpg"
 							alt="chicken"
 						/>
 						<div class="chooseFood__text__wrap">
-							<h1>치킨</h1>
+							<h1>무화과 샐러드</h1>
 							<div class="spin__wrap">
-								<span>8,000원</span>
+								<span>11,000원</span>
 								<!-- <input class="spin" type="number" min="1" value="1" />
 								<button
 									class="cartIcon"
@@ -142,11 +138,11 @@
 					</div>
 					<div class="chooseFood__img" data-index="5">
 						<img
-							src="https://cdn.pixabay.com/photo/2016/03/26/23/19/hamburger-1281855_960_720.jpg"
+							src="https://cdn.pixabay.com/photo/2022/11/08/05/34/lasagna-7577748_960_720.jpg"
 							alt="hamberger"
 						/>
 						<div class="chooseFood__text__wrap">
-							<h1>햄버거</h1>
+							<h1>라자냐</h1>
 							<div class="spin__wrap">
 								<span>8,000원</span>
 								<!-- <input class="spin" type="number" min="1" value="1" />
@@ -177,9 +173,9 @@
 					src="https://cdn.pixabay.com/photo/2016/03/26/23/19/hamburger-1281855_960_720.jpg"
 					alt="hamberger"
 				/>
-				<div class="chooseFood__text__wrap">
+				<div class="chooseFood__text__wrap chooseFood__popUp__wrap">
 					<h1>햄버거</h1>
-					<div class="spin__wrap">
+					<div class="spin__wrap popUp__spin__wrap">
 						<span>8,000원</span>
 						<input class="spin" type="number" min="1" value="1" />
 						<button
@@ -209,5 +205,10 @@
 				</div>
 			</div>
 		</section>
+		<script src="jquery-3.6.1.min.js"></script>
+		<!-- <script src="./json-server-exam/db.json"></script> -->
+		<script src="calc.js"></script>
+		<script src="popUp.js"></script>
+		<!-- <script src="json.js"></script> -->
 	</body>
 </html>
