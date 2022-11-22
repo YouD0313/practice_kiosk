@@ -15,6 +15,7 @@ body {
 	margin: 0;
 	cursor: default;
 	font-family: 'RIDIBatang';
+	overflow-x: hidden;
 }
 
 a {

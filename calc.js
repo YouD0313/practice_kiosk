@@ -61,7 +61,7 @@ reject.addEventListener('click', () => {
 	} else {
 		if (confirm('정말 취소하겠습니까?')) {
 			alert('취소되었습니다.');
-			console.log('typeof', typeof sum);
+			// console.log('typeof', typeof sum);
 			sum = 0;
 			sumText.value = sum + '원';
 		}

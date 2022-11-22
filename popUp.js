@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		success: function (data) {
 			foodImgWrap.forEach((img, idx) => {
 				if (img.attributes[1].value == data[idx].index) {
-					console.log($('.chooseFood__img > img'));
 					$('.chooseFood__img > img').eq(idx).attr('src', data[idx].imgUrl);
 					$('.chooseFood__img > img').eq(idx).attr('alt', data[idx].alt);
 					$('.chooseFood__text__wrap > h1').eq(idx).text(data[idx].name);
@@ -29,14 +28,14 @@ document.addEventListener('DOMContentLoaded', function () {
 // 팝업화면 json 가져오기
 foodImgWrap.forEach((img, idx) => {
 	img.addEventListener('click', () => {
-		console.log('img', img);
-		console.log('img.target', img.attributes[1].value);
-		console.log('idx', idx);
+		// console.log('img', img);
+		// console.log('img.target', img.attributes[1].value);
+		// console.log('idx', idx);
 		$.ajax({
 			url: 'json-server-exam/db.json',
 			dataType: 'json',
 			success: function (data) {
-				console.log(data[idx].index);
+				// console.log(data[idx].index);
 				if (data[idx].index == idx) {
 					$('.chooseFood__popUp__img > img').attr('src', data[idx].imgUrl);
 					$('.chooseFood__popUp__img > img').attr('alt', data[idx].alt);
