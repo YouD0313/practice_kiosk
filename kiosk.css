@@ -50,7 +50,7 @@ input {
 }
 
 .head__borderbottom img {
-	width: 20vmax;
+	width: 12vmax;
 	margin: 30px;
 }
 
@@ -113,7 +113,7 @@ header {
 
 /* food */
 .chooseFood__padding {
-	padding: 70px 50px;
+	padding: 10px 50px 50px;
 }
 .chooseFood__warp {
 	width: 70vmax;
@@ -169,12 +169,13 @@ header {
 	background-color: var(--color-green);
 	position: fixed;
 	bottom: 0;
+	height: 100px;
 }
 
 .money__input__wrap {
 	width: 75vmax;
 	margin: 0 auto;
-	padding: 20px 0;
+	padding: 10px 0;
 	display: flex;
 	justify-content: space-evenly;
 }
@@ -220,8 +221,12 @@ header {
 }
 
 @media (max-width: 786px) {
-	.chooseFood__warp,
-	.chooseFood__warp:nth-child(2) {
+	.chooseFood__padding {
+		padding: 0;
+		padding-top: 20px;
+	}
+
+	.chooseFood__warp {
 		flex-direction: column;
 		flex-grow: 1;
 	}
@@ -235,6 +240,7 @@ header {
 	}
 
 	.chooseFood__img img {
-		width: 50vmax;
+		width: 60vmax;
+		height: 40vmax;
 	}
 }

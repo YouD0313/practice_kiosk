@@ -27,18 +27,12 @@ button.forEach((cart, idx) => {
 // for문으로 변경하기
 function ifelse() {
 	let fee = parseInt(prompt('금액을 투입하세요.', 10000));
+	console.log('fee', fee);
 	if (fee) {
 		if (fee < sum) {
-			alert(Math.abs(fee - sum) + '원 부족합니다.\n다시 금액을 투입하세요.');
-			let fixFee = parseInt(prompt('다시 금액을 투입하세요.', 10000));
-			if (fixFee < sum) {
-				alert(Math.abs(fixFee - sum) + '원 부족합니다.\n재결제하세요.');
-			} else {
-				alert(
-					'결제완료 되었습니다.\n거스름돈은 ' + (fixFee - sum) + '원 입니다.'
-				);
-				sum = 0;
-				sumText.value = sum + '원';
+			for (let i = 1; i < 10; i++) {
+				alert(Math.abs(fee - sum) + '원 부족합니다.\n다시 금액을 투입하세요.');
+				let fixFee = parseInt(prompt('다시 금액을 투입하세요.', 10000));
 			}
 		} else {
 			alert('결제완료 되었습니다.\n거스름돈은 ' + (fee - sum) + '원 입니다.');
