@@ -48,7 +48,7 @@ foodImgWrap.forEach((img, idx) => {
 		if (img.attributes[1].value == idx) {
 			popUp.classList.add('pop');
 			foodSection.classList.add('noClick');
-			$('body').css('overflow', 'hidden');
+			$('*').css('overflow', 'hidden');
 			header.style.opacity = '0.5';
 			foodSection.style.opacity = '0.5';
 		}
@@ -59,7 +59,7 @@ function closeEvt(icon) {
 	icon.addEventListener('click', () => {
 		popUp.classList.remove('pop');
 		foodSection.classList.remove('noClick');
-		$('body').css('overflow', 'visible');
+		$('*').css('overflow', 'visible');
 		header.style.opacity = '1';
 		foodSection.style.opacity = '1';
 	});

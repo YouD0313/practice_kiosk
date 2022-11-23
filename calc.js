@@ -111,6 +111,7 @@ function ifelse() {
 		sum = 0;
 		sumText.value = sum + '원';
 	}
+	return fee;
 }
 
 const charge = document.querySelector('.charge');
@@ -121,6 +122,30 @@ charge.addEventListener('click', () => {
 		ifelse();
 	}
 });
+
+// function paymentLoop() {
+// 	return new Promise((resolve, reject) => {
+// 		for (let i = 0; ; i++) {
+// 			if (resolve < sum) {
+// 				alert(Math.abs(fee - sum) + '원 부족합니다.\n다시 금액을 투입하세요.');
+// 				fee = prompt('다시 금액을 투입하세요.', 10000);
+// 			} else if (resolve == NaN) {
+// 				alert('숫자로 입력하세요.');
+// 				fee = prompt('다시 금액을 투입하세요.', 10000);
+// 			} else if (resolve == null) {
+// 				return;
+// 			} else if (resolve > sum) {
+// 				alert('결제완료 되었습니다.\n거스름돈은 ' + (fee - sum) + '원 입니다.');
+// 				sum = 0;
+// 				sumText.value = sum + '원';
+// 				return;
+// 			} else {
+// 				reject(new Error('Error'));
+// 				return;
+// 			}
+// 		}
+// 	});
+// }
 
 const reject = document.querySelector('.reject');
 reject.addEventListener('click', () => {
