@@ -25,28 +25,10 @@ button.forEach((cart, idx) => {
 });
 
 // for문으로 변경하기
-function paymentLoop() {
-	if (isNaN(fee)) {
-		alert('숫자로 입력하세요.');
-		fee = prompt('다시 금액을 투입하세요.', 10000);
-	} else if (fee == null) {
-		return;
-	} else if (fee > sum) {
-		alert('결제완료 되었습니다.\n거스름돈은 ' + (fee - sum) + '원 입니다.');
-		sum = 0;
-		sumText.value = sum + '원';
-		return;
-	} else {
-		console.log('insideforNelse', fee);
-		console.log('feetype', typeof fee);
-		alert(Math.abs(fee - sum) + '원 부족합니다.\n다시 금액을 투입하세요.');
-		fee = prompt('다시 금액을 투입하세요.', 10000);
-	}
-}
 function ifelse() {
-	let fee = parseInt(prompt('금액을 투입하세요.', 10000));
+	let fee = prompt('금액을 투입하세요.', 10000);
 	console.log('type', typeof fee);
-	if (!isNaN(fee) || fee != null || typeof fee != 'sting') {
+	if (fee != NaN || fee != null || typeof fee != 'string') {
 		if (fee < sum) {
 			console.log('outsidefor', fee);
 			for (let i = 1; ; i++) {
