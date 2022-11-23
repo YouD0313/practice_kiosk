@@ -6,6 +6,7 @@ const header = document.querySelector('header');
 const foodSection = document.querySelector('.chooseFood');
 const xMark = document.querySelector('.xmark');
 const cartIcon = document.querySelector('.cartIcon');
+const money = document.querySelector('.money');
 
 // 키오스크화면 json 가져오기
 document.addEventListener('DOMContentLoaded', function () {
@@ -48,6 +49,7 @@ foodImgWrap.forEach((img, idx) => {
 		if (img.attributes[1].value == idx) {
 			popUp.classList.add('pop');
 			foodSection.classList.add('noClick');
+			money.classList.add('noClick');
 			$('*').css('overflow', 'hidden');
 			header.style.opacity = '0.5';
 			foodSection.style.opacity = '0.5';
@@ -59,6 +61,7 @@ function closeEvt(icon) {
 	icon.addEventListener('click', () => {
 		popUp.classList.remove('pop');
 		foodSection.classList.remove('noClick');
+		money.classList.remove('noClick');
 		$('*').css('overflow', 'visible');
 		header.style.opacity = '1';
 		foodSection.style.opacity = '1';

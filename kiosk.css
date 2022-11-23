@@ -108,7 +108,8 @@ header {
 	pointer-events: all;
 }
 
-.chooseFood.noClick {
+.chooseFood.noClick,
+.money.noClick {
 	pointer-events: none;
 }
 
