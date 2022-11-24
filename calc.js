@@ -160,3 +160,7 @@ reject.addEventListener('click', () => {
 		}
 	}
 });
+
+$(function () {
+	$('*').css('overflow-x', 'hidden');
+});
