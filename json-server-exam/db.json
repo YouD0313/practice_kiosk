@@ -55,14 +55,10 @@
 		"price": "3,800원",
 		"value": 3800,
 		"extra": [
+			{ "id": 0, "extra": "+ 500 샷추가", "value": 500 },
 			{
-				"extraShot": "샷추가",
-				"price": "500원",
-				"value": 500
-			},
-			{
-				"extraIce": "아이스 변경",
-				"price": "500원",
+				"id": 1,
+				"extra": "+ 500 아이스 변경",
 				"value": 500
 			}
 		]
@@ -75,14 +71,10 @@
 		"price": "4,300원",
 		"value": 4300,
 		"extra": [
+			{ "id": 0, "extra": "+ 500 샷추가", "value": 500 },
 			{
-				"extraShot": "샷추가",
-				"price": "500원",
-				"value": 500
-			},
-			{
-				"extraIce": "아이스 변경",
-				"price": "500원",
+				"id": 1,
+				"extra": "+ 500 아이스 변경",
 				"value": 500
 			}
 		]
@@ -95,14 +87,10 @@
 		"price": "4,800원",
 		"value": 4800,
 		"extra": [
+			{ "id": 0, "extra": "+ 500 샷추가", "value": 500 },
 			{
-				"extraShot": "샷추가",
-				"price": "500원",
-				"value": 500
-			},
-			{
-				"extraIce": "아이스 변경",
-				"price": "500원",
+				"id": 1,
+				"extra": "+ 500 아이스 변경",
 				"value": 500
 			}
 		]
@@ -115,14 +103,10 @@
 		"price": "4,800원",
 		"value": 4800,
 		"extra": [
+			{ "id": 0, "extra": "+ 500 샷추가", "value": 500 },
 			{
-				"extraShot": "샷추가",
-				"price": "500원",
-				"value": 500
-			},
-			{
-				"extraIce": "아이스 변경",
-				"price": "500원",
+				"id": 1,
+				"extra": "+ 500 아이스 변경",
 				"value": 500
 			}
 		]

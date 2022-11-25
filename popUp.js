@@ -8,6 +8,8 @@ const coffeeSection = document.querySelector('.chooseCoffee');
 const xMark = document.querySelector('.xmark');
 const cartIcon = document.querySelector('.cartIcon');
 const money = document.querySelector('.money');
+const option = document.querySelectorAll('.option');
+const select = document.querySelector('#extra');
 
 // 키오스크화면 json 가져오기
 document.addEventListener('DOMContentLoaded', function () {
@@ -49,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // 팝업화면 json 가져오기
+// food
 foodImgWrap.forEach((img, idx) => {
 	img.addEventListener('click', () => {
 		// console.log('img', img);
@@ -65,6 +68,7 @@ foodImgWrap.forEach((img, idx) => {
 					$('.chooseFood__popUp__wrap > h1').text(data[idx].name);
 					$('.popUp__spin__wrap > span').text(data[idx].price);
 					$('.popUp__spin__wrap > button').attr('value', data[idx].value);
+					$('#extra').css('display', 'none');
 				}
 			},
 		});
@@ -74,6 +78,7 @@ foodImgWrap.forEach((img, idx) => {
 	});
 });
 
+//coffee
 coffeeImgWrap.forEach((img, idx) => {
 	const idx6 = idx + 6;
 	img.addEventListener('click', () => {
@@ -85,12 +90,56 @@ coffeeImgWrap.forEach((img, idx) => {
 			dataType: 'json',
 			success: function (data) {
 				if (data[idx6].coffeeIndex == idx) {
+					// console.log(data);
+					// console.log(data[idx6].extra.value);
+					// console.log(data[idx6].extra[idx].id);
+					// $('#extra').css('display', 'block');
 					$('.chooseFood__popUp__img > img').attr('src', data[idx6].imgUrl);
 					$('.chooseFood__popUp__img > img').attr('alt', data[idx6].alt);
 					$('.chooseFood__popUp__wrap > h1').text(data[idx6].name);
 					$('.popUp__spin__wrap > span').text(data[idx6].price);
 					$('.popUp__spin__wrap > button').attr('value', data[idx6].value);
+					if (!!data[idx6].extra) {
+						$('#extra').css('display', 'block');
+						// option.forEach((opt, i) => {
+						// 	if (
+						// 		data[idx6].coffeeIndex == idx &&
+						// 		opt.attributes[1].value == i
+						// 	) {
+						// 		console.log(data[idx6].extra[i].extraShot);
+						// 		$('.extra').text(data[idx6].extra[i].extraShot);
+						// 	}
+						// 	console.log('opt', opt.attributes[1].value);
+						// 	console.log('i', i);
+						// });
+					} else if (!data[idx6].extra) {
+						$('#extra').css('display', 'none');
+					}
 				}
+				$.ajax({
+					url: 'json-server-exam/db.json',
+					dataType: 'json',
+					success: function (data) {
+						option.forEach((opt, i) => {
+							if (
+								data[idx6].coffeeIndex == idx &&
+								opt.attributes[1].value == i
+							) {
+								$('select > option')
+									.eq(i + 1)
+									.text(data[idx6].extra[0].extra)
+									.attr('value', data[idx6].extra[0].value);
+								$('select > option')
+									.eq(i + 2)
+									.text(data[idx6].extra[1].extra)
+									.attr('value', data[idx6].extra[1].value);
+								// console.log('ice', data[idx6].extra[1].extra);
+								// console.log($('select > option').eq(0).text());
+								console.log($('select > option').first());
+							}
+						});
+					},
+				});
 			},
 		});
 		if (img.attributes[1].value == idx) {
@@ -98,6 +147,31 @@ coffeeImgWrap.forEach((img, idx) => {
 		}
 	});
 });
+
+// option
+// option.forEach((opt, idx) => {
+// 	const idx6 = idx + 6;
+// 	opt.addEventListener('click', () => {
+// 		// console.log('img', img);
+// 		// console.log('img.target', img.attributes[1].value);
+// 		// console.log('idx', idx);
+// 		$.ajax({
+// 			url: 'json-server-exam/db.json',
+// 			dataType: 'json',
+// 			success: function (data) {
+// 				if (data[idx6].coffeeIndex == idx && opt.attributes[1].value === 0) {
+// 					console.log(data[idx6].extra[i].extraShot);
+// 					$('.extra').text(data[idx6].extra[i].extraShot);
+// 				}
+// 				console.log('opt', opt.attributes[1].value);
+// 				console.log('i', idx);
+// 			},
+// 		});
+// 		if (img.attributes[1].value == idx) {
+// 			popUpClick();
+// 		}
+// 	});
+// });
 
 function popUpClick() {
 	popUp.classList.add('pop');
@@ -124,6 +198,8 @@ function closeEvt(icon) {
 		coffeeSection.style.opacity = '1';
 		foodSection.style.opacity = '1';
 		chooseMenu.style.opacity = '1';
+		// if ()
+		// $('select option') = $('select > option').first();
 	});
 }
 

@@ -144,6 +144,15 @@ header {
 	pointer-events: none;
 }
 
+#extra {
+	display: none;
+	margin-left: 20px;
+	padding: 0 20px;
+
+	font-size: medium;
+	appearance: none;
+}
+
 /* food */
 .chooseFood__padding,
 .chooseCoffee__padding {
@@ -186,7 +195,8 @@ header {
 }
 
 .spin,
-.cartIcon {
+.cartIcon,
+#extra {
 	border: 1px solid var(--color-green);
 }
 
