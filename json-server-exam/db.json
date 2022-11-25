@@ -1,6 +1,6 @@
 [
 	{
-		"index": 0,
+		"foodIndex": 0,
 		"imgUrl": "https://cdn.pixabay.com/photo/2016/08/25/00/22/chicken-1618459_960_720.jpg",
 		"alt": "chicken",
 		"name": "치킨",
@@ -8,7 +8,7 @@
 		"value": 13000
 	},
 	{
-		"index": 1,
+		"foodIndex": 1,
 		"imgUrl": "https://cdn.pixabay.com/photo/2016/03/26/23/19/hamburger-1281855_960_720.jpg",
 		"alt": "hamberger",
 		"name": "햄버거",
@@ -16,7 +16,7 @@
 		"value": 8000
 	},
 	{
-		"index": 2,
+		"foodIndex": 2,
 		"imgUrl": "https://cdn.pixabay.com/photo/2014/11/05/15/57/salmon-518032_960_720.jpg",
 		"alt": "salmon steak",
 		"name": "연어스테이크",
@@ -24,7 +24,7 @@
 		"value": 15000
 	},
 	{
-		"index": 3,
+		"foodIndex": 3,
 		"imgUrl": "https://cdn.pixabay.com/photo/2016/11/06/23/31/breakfast-1804457_960_720.jpg",
 		"alt": "cheese toast",
 		"name": "치즈토스트",
@@ -32,7 +32,7 @@
 		"value": 9000
 	},
 	{
-		"index": 4,
+		"foodIndex": 4,
 		"imgUrl": "https://cdn.pixabay.com/photo/2016/09/15/19/24/salad-1672505_960_720.jpg",
 		"alt": "fig salad",
 		"name": "무화과 샐러드",
@@ -40,11 +40,107 @@
 		"value": 11000
 	},
 	{
-		"index": 5,
+		"foodIndex": 5,
 		"imgUrl": "https://cdn.pixabay.com/photo/2022/11/08/05/34/lasagna-7577748_960_720.jpg",
 		"alt": "lasagne",
 		"name": "라자냐",
 		"price": "8,000원",
 		"value": 8000
+	},
+	{
+		"coffeeIndex": 0,
+		"imgUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Tazzina_di_caff%C3%A8_a_Ventimiglia.jpg/330px-Tazzina_di_caff%C3%A8_a_Ventimiglia.jpg",
+		"alt": "espresso",
+		"name": "에스프레소",
+		"price": "3,800원",
+		"value": 3800,
+		"extra": [
+			{
+				"extraShot": "샷추가",
+				"price": "500원",
+				"value": 500
+			},
+			{
+				"extraIce": "아이스 변경",
+				"price": "500원",
+				"value": 500
+			}
+		]
+	},
+	{
+		"coffeeIndex": 1,
+		"imgUrl": "https://cdn.pixabay.com/photo/2017/09/04/18/39/coffee-2714970_960_720.jpg",
+		"alt": "americano",
+		"name": "아메리카노",
+		"price": "4,300원",
+		"value": 4300,
+		"extra": [
+			{
+				"extraShot": "샷추가",
+				"price": "500원",
+				"value": 500
+			},
+			{
+				"extraIce": "아이스 변경",
+				"price": "500원",
+				"value": 500
+			}
+		]
+	},
+	{
+		"coffeeIndex": 2,
+		"imgUrl": "https://cdn.pixabay.com/photo/2016/11/29/02/10/caffeine-1866758_960_720.jpg",
+		"alt": "espresso",
+		"name": "카페라떼",
+		"price": "4,800원",
+		"value": 4800,
+		"extra": [
+			{
+				"extraShot": "샷추가",
+				"price": "500원",
+				"value": 500
+			},
+			{
+				"extraIce": "아이스 변경",
+				"price": "500원",
+				"value": 500
+			}
+		]
+	},
+	{
+		"coffeeIndex": 3,
+		"imgUrl": "https://image.edaily.co.kr/images/photo/files/NP/S/2017/03/PS17030800232.jpg",
+		"alt": "cafemoca",
+		"name": "카페모카",
+		"price": "4,800원",
+		"value": 4800,
+		"extra": [
+			{
+				"extraShot": "샷추가",
+				"price": "500원",
+				"value": 500
+			},
+			{
+				"extraIce": "아이스 변경",
+				"price": "500원",
+				"value": 500
+			}
+		]
+	},
+	{
+		"coffeeIndex": 4,
+		"imgUrl": "https://cdn.pixabay.com/photo/2022/07/12/09/27/pineapple-juice-7316893_960_720.jpg",
+		"alt": "pineapple juice",
+		"name": "파인애플 생과일쥬스",
+		"price": "5,500원",
+		"value": 5500
+	},
+	{
+		"coffeeIndex": 5,
+		"imgUrl": "https://cdn.greenpostkorea.co.kr/news/photo/201808/94283_89639_537.jpg",
+		"alt": "grapefruit juice",
+		"name": "자몽 생과일쥬스",
+		"price": "5,500원",
+		"value": 5500
 	}
 ]

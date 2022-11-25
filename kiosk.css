@@ -60,15 +60,44 @@ header {
 	width: 100vmax;
 }
 
-/* header,
-.chooseFood {
-	opacity: 0.5;
-} */
+/* choose menu */
+.chooseMenu {
+	background-color: var(--color-green);
+}
+
+.chooseMenu__wrap {
+	display: flex;
+	width: 70vmax;
+	margin: 0 auto;
+}
+
+.menuClick {
+	border: 3px solid var(--color-white);
+	padding: 10px;
+	width: 10rem;
+	border-radius: 5px 40px 0 0;
+	text-align: center;
+	color: var(--color-white);
+	cursor: pointer;
+}
+
+.menuClick span {
+	font-size: 2rem;
+}
+
+.chooseCoffee {
+	display: none;
+}
+
+.chooseMenu__wrap .active {
+	background-color: var(--color-white);
+	color: var(--color-green);
+	font-weight: 900;
+}
 
 /* food pop-up */
 
 .chooseFood__popUp {
-	/* display: none; */
 	opacity: 0;
 	pointer-events: none;
 	background-color: var(--color-white);
@@ -108,16 +137,20 @@ header {
 	pointer-events: all;
 }
 
+.chooseMenu.noClick,
+.chooseCoffee.noClick,
 .chooseFood.noClick,
 .money.noClick {
 	pointer-events: none;
 }
 
 /* food */
-.chooseFood__padding {
+.chooseFood__padding,
+.chooseCoffee__padding {
 	padding: 10px 50px 50px;
 }
-.chooseFood__warp {
+.chooseFood__wrap,
+.chooseCoffee__wrap {
 	width: 70vmax;
 	display: flex;
 	margin: 0 auto;
@@ -125,21 +158,25 @@ header {
 	justify-content: space-between;
 }
 
-.chooseFood__warp:last-of-type {
+.chooseFood__wrap:last-of-type,
+.chooseCoffee__wrap:last-of-type {
 	margin-bottom: 90px;
 }
 
-.chooseFood__img {
+.chooseFood__img,
+.chooseCoffee__img {
 	cursor: pointer;
 }
 
-.chooseFood__img img {
+.chooseFood__img img,
+.chooseCoffee__img img {
 	width: 30vmax;
 	height: 20vmax;
 	border: 3px solid var(--color-green);
 }
 
-.chooseFood__text__wrap span {
+.chooseFood__text__wrap span,
+.chooseCoffee__text__wrap span {
 	font-size: 1.3rem;
 	margin-right: 20px;
 }
@@ -228,7 +265,7 @@ header {
 		padding-top: 20px;
 	}
 
-	.chooseFood__warp {
+	.chooseFood__wrap {
 		flex-direction: column;
 		flex-grow: 1;
 	}
