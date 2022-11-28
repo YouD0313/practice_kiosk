@@ -270,25 +270,30 @@ header {
 }
 
 @media (max-width: 786px) {
-	.chooseFood__padding {
+	.chooseFood__padding,
+	.chooseCoffee__padding {
 		padding: 0;
 		padding-top: 20px;
 	}
 
-	.chooseFood__wrap {
+	.chooseFood__wrap,
+	.chooseCoffee__wrap {
 		flex-direction: column;
 		flex-grow: 1;
 	}
 
-	.chooseFood__img {
+	.chooseFood__img,
+	.chooseCoffee__img {
 		margin-bottom: 50px;
 	}
 
-	.chooseFood__img:last-of-type {
+	.chooseFood__img:last-of-type,
+	.chooseCoffee__img:last-of-type {
 		margin-bottom: 0;
 	}
 
-	.chooseFood__img img {
+	.chooseFood__img img,
+	.chooseCoffee__img img {
 		width: 60vmax;
 		height: 40vmax;
 	}

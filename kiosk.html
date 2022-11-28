@@ -11,8 +11,8 @@
 			crossorigin="anonymous"
 		></script>
 		<script src="jquery-3.6.1.min.js"></script>
-		<script src="calc.js" defer></script>
 		<script src="popUp.js" defer></script>
+		<script src="calc.js" defer></script>
 		<script src="menu_active.js" defer></script>
 	</head>
 	<body>
@@ -35,7 +35,7 @@
 		</section>
 
 		<!-- Food -->
-		<section class="section chooseFood active">
+		<section class="section chooseFood">
 			<div class="chooseFood__padding">
 				<div class="chooseFood__wrap">
 					<div class="chooseFood__img" data-index="0">
@@ -238,7 +238,7 @@
 				<div class="chooseFood__text__wrap chooseFood__popUp__wrap">
 					<h1></h1>
 					<div class="spin__wrap popUp__spin__wrap">
-						<span></span>
+						<span class="price"></span><span>원</span>
 						<input class="spin" type="number" min="1" value="1" />
 						<button class="cartIcon" type="button" value="">
 							<i class="fa-solid fa-cart-shopping"></i>
@@ -247,11 +247,11 @@
 							<option value="">
 								<span>&nbsp-------추가하기-------&nbsp</span>
 							</option>
-							<option class="option" value="">
+							<option class="option" value="" data-idx="0">
 								<!-- <span class="extra"></span> -->
 								<!-- <span class="price"></span> -->
 							</option>
-							<option class="option" value="">
+							<option class="option" value="" data-idx="1">
 								<!-- <span class="extra"></span> -->
 								<!-- <span class="price"></span> -->
 							</option>

@@ -10,6 +10,9 @@ const cartIcon = document.querySelector('.cartIcon');
 const money = document.querySelector('.money');
 const option = document.querySelectorAll('.option');
 const select = document.querySelector('#extra');
+let menu_price = 0;
+let ice = false;
+let n = 0;
 
 // 키오스크화면 json 가져오기
 document.addEventListener('DOMContentLoaded', function () {
@@ -66,7 +69,7 @@ foodImgWrap.forEach((img, idx) => {
 					$('.chooseFood__popUp__img > img').attr('src', data[idx].imgUrl);
 					$('.chooseFood__popUp__img > img').attr('alt', data[idx].alt);
 					$('.chooseFood__popUp__wrap > h1').text(data[idx].name);
-					$('.popUp__spin__wrap > span').text(data[idx].price);
+					$('.price').text(data[idx].value);
 					$('.popUp__spin__wrap > button').attr('value', data[idx].value);
 					$('#extra').css('display', 'none');
 				}
@@ -79,6 +82,7 @@ foodImgWrap.forEach((img, idx) => {
 });
 
 //coffee
+let priceVal = 0;
 coffeeImgWrap.forEach((img, idx) => {
 	const idx6 = idx + 6;
 	img.addEventListener('click', () => {
@@ -97,7 +101,10 @@ coffeeImgWrap.forEach((img, idx) => {
 					$('.chooseFood__popUp__img > img').attr('src', data[idx6].imgUrl);
 					$('.chooseFood__popUp__img > img').attr('alt', data[idx6].alt);
 					$('.chooseFood__popUp__wrap > h1').text(data[idx6].name);
-					$('.popUp__spin__wrap > span').text(data[idx6].price);
+					$('.popUp__spin__wrap > .price')
+						.text(data[idx6].value)
+						.val(data[idx6].value);
+					menu_price = data[idx6].value;
 					$('.popUp__spin__wrap > button').attr('value', data[idx6].value);
 					if (!!data[idx6].extra) {
 						$('#extra').css('display', 'block');
@@ -116,29 +123,43 @@ coffeeImgWrap.forEach((img, idx) => {
 						$('#extra').css('display', 'none');
 					}
 				}
-				$.ajax({
-					url: 'json-server-exam/db.json',
-					dataType: 'json',
-					success: function (data) {
-						option.forEach((opt, i) => {
-							if (
-								data[idx6].coffeeIndex == idx &&
-								opt.attributes[1].value == i
-							) {
-								$('select > option')
-									.eq(i + 1)
-									.text(data[idx6].extra[0].extra)
-									.attr('value', data[idx6].extra[0].value);
-								$('select > option')
-									.eq(i + 2)
-									.text(data[idx6].extra[1].extra)
-									.attr('value', data[idx6].extra[1].value);
-								// console.log('ice', data[idx6].extra[1].extra);
-								// console.log($('select > option').eq(0).text());
-								console.log($('select > option').first());
-							}
-						});
-					},
+				option.forEach((opt, i) => {
+					if (data[idx6].coffeeIndex == idx && opt.attributes[1].value == i) {
+						$('select > option')
+							.eq(i + 1)
+							.text(data[idx6].extra[0].extra)
+							.attr('value', data[idx6].extra[0].value);
+						$('select > option')
+							.eq(i + 2)
+							.text(data[idx6].extra[1].extra)
+							.attr('value', data[idx6].extra[1].value);
+						// console.log('ice', data[idx6].extra[1].extra);
+						// console.log($('select > option').eq(0).text());
+						// console.log($('select > option').first());
+					}
+					// console.log($('.price').val());
+				});
+				select.addEventListener('change', function (e) {
+					if (e.target.selectedIndex < 2) {
+						return;
+					}
+					if (ice) {
+						console.log($('.option').eq(1).text());
+						console.log(data[idx6].extra[1]);
+						$('.option')
+							.eq(1)
+							.text(data[idx6].extra[1].extra)
+							.attr('value', data[idx6].extra[1].value);
+						$('#extra option:eq(0)').prop('selected', true);
+						ice = false;
+					} else if (!ice) {
+						$('.option')
+							.eq(1)
+							.text(data[idx6].extra[1].reject)
+							.attr('value', data[idx6].extra[1].rejectVal);
+						ice = true;
+						$('#extra option:eq(0)').prop('selected', true);
+					}
 				});
 			},
 		});
@@ -147,6 +168,73 @@ coffeeImgWrap.forEach((img, idx) => {
 		}
 	});
 });
+
+select.addEventListener('change', function () {
+	// console.log(++n);
+	// option.forEach((opt, i) => {
+	// console.log(select.options[select.selectedIndex].attributes[1].value);
+	// console.log(select.options.selectedIndex);
+	// let selectedData =
+	// 	select.options[select.selectedIndex].attributes[2].value;
+	let selectPriceValue =
+		select.options[select.selectedIndex].attributes[1].value;
+	let selectedIndex = select.options.selectedIndex;
+	// console.log(parseInt(selectPriceValue));
+	// console.log(this.childNodes[3].attributes[2].value);
+
+	switch (selectedIndex) {
+		case 1:
+			menu_price += parseInt(selectPriceValue);
+			priceVal = menu_price;
+			// console.log('case1', priceVal, 'menuprice', menu_price);
+
+			break;
+		case 2:
+			//if (!ice) {
+			//menu_price = parseInt(menu_price) + parseInt(selectPriceValue);
+			//priceVal = menu_price;
+			// console.log('case2', priceVal, 'menuprice', menu_price);
+			//ice = true;
+			//} else {
+			menu_price = parseInt(menu_price) + parseInt(selectPriceValue);
+			priceVal = menu_price;
+			//ice = false;
+			//}
+			break;
+	}
+
+	//
+	// if (selectedIndex == 1) {
+	// 	// console.log(option[0].attributes[1].value);
+	// 	selectFnc();
+	// } else if (selectedIndex == 2) {
+	// 	selectFnc();
+	// }
+
+	// // console.log(sumVal);
+
+	// console.log('priceval', priceVal);
+	$('.price').text(priceVal);
+
+	//
+	// $('.option').each(function () {
+	// 	console.log($('.option').eq(idx));
+	// 	let priceVal = parseInt($('.price').val());
+	// 	priceVal += parseInt($('.option').eq(idx).val());
+	// 	$('.price').text(priceVal);
+	// });
+	// });
+});
+
+// function selectFnc(priceVal, selectPriceValue) {
+// 	if (priceVal == 4300) {
+// 		priceVal += parseInt(selectPriceValue);
+// 	} else {
+// 		priceVal = 0;
+// 		priceVal += parseInt($('.price').val()) + parseInt(selectPriceValue);
+// 		console.log(priceVal);
+// 	}
+// }
 
 // option
 // option.forEach((opt, idx) => {
@@ -198,8 +286,9 @@ function closeEvt(icon) {
 		coffeeSection.style.opacity = '1';
 		foodSection.style.opacity = '1';
 		chooseMenu.style.opacity = '1';
-		// if ()
-		// $('select option') = $('select > option').first();
+		$('#extra option:eq(0)').prop('selected', true);
+		//priceVal = 0;
+		//priceVal += parseInt($('.price').val());
 	});
 }
 
@@ -215,3 +304,180 @@ closeEvt(cartIcon);
 // json
 // let data = JSON.parse(JSON.stringify(TestFile));
 // console.log(data);
+
+/**
+ *
+ */
+/**
+ * calc.js
+ */
+
+let sum = 0;
+const spin = document.querySelectorAll('.spin');
+const button = document.querySelectorAll('.cartIcon');
+const sumText = document.querySelector('#sumtext');
+
+// button.addEventListener('click', function () {
+// 	sum += parseInt(button.value) * parseInt(spin.value);
+// 	document.getElementById('sumtext').value = sum + '원';
+// 	spin.value = 1;
+// });
+
+button.forEach((cart, idx) => {
+	cart.addEventListener('click', function () {
+		// const selectDisplay = $('#extra').css('display', 'block');
+		// sum +=
+		// 	parseInt(this.value) * parseInt(this.parentElement.childNodes[3].value);
+		// console.log('button.value', button[idx].value);
+		// console.log('spin.value', spin[idx].value);
+		spin[idx].value = 1;
+		if ($('#extra').css('display', 'block')) {
+			console.log($('.price').text());
+			sum += parseInt($('.price').text());
+			sumText.value = sum + '원';
+		} else {
+			sum += parseInt(button[idx].value) * parseInt(spin[idx].value);
+			sumText.value = sum + '원';
+		}
+		// console.log('sum', sum);
+		// console.log('cart', cart);
+		// console.log('idx', idx);
+	});
+});
+
+// for문으로 변경하기
+function ifelse() {
+	let fee = prompt('금액을 투입하세요.', 10000);
+	console.log('type', typeof fee);
+	if (fee != NaN || fee != null || typeof fee != 'string') {
+		if (fee < sum) {
+			console.log('outsidefor', fee);
+			for (let i = 1; ; i++) {
+				console.log('insidefor', fee);
+				if (isNaN(fee)) {
+					alert('숫자로 입력하세요.');
+					fee = prompt('다시 금액을 투입하세요.', 10000);
+				} else if (fee == null) {
+					return;
+				} else if (fee > sum) {
+					alert(
+						'결제완료 되었습니다.\n거스름돈은 ' + (fee - sum) + '원 입니다.'
+					);
+					sum = 0;
+					sumText.value = sum + '원';
+					return;
+				} else {
+					console.log('insideforNelse', fee);
+					console.log('feetype', typeof fee);
+					alert(
+						Math.abs(fee - sum) + '원 부족합니다.\n다시 금액을 투입하세요.'
+					);
+					fee = prompt('다시 금액을 투입하세요.', 10000);
+				}
+			}
+		} else if (isNaN(fee)) {
+			for (let i = 1; ; i++) {
+				console.log('insidefor', fee);
+				if (isNaN(fee)) {
+					alert('숫자로 입력하세요.');
+					fee = prompt('다시 금액을 투입하세요.', 10000);
+				} else if (fee == null) {
+					return;
+				} else if (fee > sum) {
+					alert(
+						'결제완료 되었습니다.\n거스름돈은 ' + (fee - sum) + '원 입니다.'
+					);
+					sum = 0;
+					sumText.value = sum + '원';
+					return;
+				} else {
+					console.log('insideforNelse', fee);
+					console.log('feetype', typeof fee);
+					alert(
+						Math.abs(fee - sum) + '원 부족합니다.\n다시 금액을 투입하세요.'
+					);
+					fee = prompt('다시 금액을 투입하세요.', 10000);
+				}
+			}
+		} else if (fee == null) {
+			return;
+		} else {
+			alert('결제완료 되었습니다.\n거스름돈은 ' + (fee - sum) + '원 입니다.');
+			sum = 0;
+			sumText.value = sum + '원';
+		}
+	} else if (fee == null) {
+		return;
+	} else if (isNaN(fee)) {
+		for (let i = 1; ; i++) {
+			console.log('insidefor', fee);
+			if (isNaN(fee)) {
+				alert('숫자로 입력하세요.');
+				fee = prompt('다시 금액을 투입하세요.', 10000);
+			} else if (fee == null) {
+				return;
+			} else if (fee > sum) {
+				alert('결제완료 되었습니다.\n거스름돈은 ' + (fee - sum) + '원 입니다.');
+				sum = 0;
+				sumText.value = sum + '원';
+			} else {
+				console.log('insideforNelse', fee);
+				console.log('feetype', typeof fee);
+				alert(Math.abs(fee - sum) + '원 부족합니다.\n다시 금액을 투입하세요.');
+				fee = prompt('다시 금액을 투입하세요.', 10000);
+			}
+		}
+	} else {
+		alert('결제완료 되었습니다.\n거스름돈은 ' + (fee - sum) + '원 입니다.');
+		sum = 0;
+		sumText.value = sum + '원';
+	}
+	return fee;
+}
+
+const charge = document.querySelector('.charge');
+charge.addEventListener('click', () => {
+	if (sum == 0) {
+		alert('선택한 메뉴가 없습니다.\n메뉴를 선택하세요.');
+	} else {
+		ifelse();
+	}
+});
+
+// function paymentLoop() {
+// 	return new Promise((resolve, reject) => {
+// 		for (let i = 0; ; i++) {
+// 			if (resolve < sum) {
+// 				alert(Math.abs(fee - sum) + '원 부족합니다.\n다시 금액을 투입하세요.');
+// 				fee = prompt('다시 금액을 투입하세요.', 10000);
+// 			} else if (resolve == NaN) {
+// 				alert('숫자로 입력하세요.');
+// 				fee = prompt('다시 금액을 투입하세요.', 10000);
+// 			} else if (resolve == null) {
+// 				return;
+// 			} else if (resolve > sum) {
+// 				alert('결제완료 되었습니다.\n거스름돈은 ' + (fee - sum) + '원 입니다.');
+// 				sum = 0;
+// 				sumText.value = sum + '원';
+// 				return;
+// 			} else {
+// 				reject(new Error('Error'));
+// 				return;
+// 			}
+// 		}
+// 	});
+// }
+
+const reject = document.querySelector('.reject');
+reject.addEventListener('click', () => {
+	if (sum == 0) {
+		alert('선택한 메뉴가 없습니다.\n메뉴를 선택하세요.');
+	} else {
+		if (confirm('정말 취소하겠습니까?')) {
+			alert('취소되었습니다.');
+			// console.log('typeof', typeof sum);
+			sum = 0;
+			sumText.value = sum + '원';
+		}
+	}
+});
