@@ -329,14 +329,19 @@ button.forEach((cart, idx) => {
 		// 	parseInt(this.value) * parseInt(this.parentElement.childNodes[3].value);
 		// console.log('button.value', button[idx].value);
 		// console.log('spin.value', spin[idx].value);
-		spin[idx].value = 1;
 		if ($('#extra').css('display', 'block')) {
-			console.log($('.price').text());
-			sum += parseInt($('.price').text());
+			// console.log($('.price').text());
+			sum += parseInt($('.price').text()) * parseInt(spin[idx].value);
+			console.log('spinvalue', parseInt(spin[idx].value));
+			console.log('pricetext', parseInt($('.price').text()));
 			sumText.value = sum + '원';
+			spin[idx].value = 1;
 		} else {
 			sum += parseInt(button[idx].value) * parseInt(spin[idx].value);
+			console.log('spinvalue', parseInt(spin[idx].value));
+			console.log('pricetext', parseInt($('.price').text()));
 			sumText.value = sum + '원';
+			spin[idx].value = 1;
 		}
 		// console.log('sum', sum);
 		// console.log('cart', cart);
