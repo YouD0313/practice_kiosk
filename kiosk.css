@@ -306,6 +306,11 @@ header {
 	* {
 		overflow-x: auto !important;
 	}
+
+	.chooseMenu__wrap {
+		width: 90vmax;
+	}
+
 	.chooseFood__popUp {
 		height: 47vmax;
 		top: 10%;
@@ -318,7 +323,7 @@ header {
 	}
 
 	.money {
-		height: 170px;
+		height: 140px;
 	}
 
 	.money__input__wrap {
@@ -346,5 +351,50 @@ header {
 	.chooseCoffee__img img {
 		width: 45vmax;
 		height: 30vmax;
+	}
+}
+@media (max-width: 400px) {
+	.chooseFood__wrap,
+	.chooseCoffee__wrap {
+		width: 90vmax;
+	}
+
+	.chooseFood__img img,
+	.chooseCoffee__img img {
+		width: 30vmax;
+		height: 20vmax;
+	}
+
+	.money__input__wrap {
+		width: 90vmax;
+	}
+
+	.money__fee__wrap h1 {
+		font-size: medium;
+	}
+
+	.money__input__wrap input {
+		font-size: medium;
+	}
+
+	.charge,
+	.reject {
+		font-size: medium;
+		font-weight: 900;
+		padding: 5px 15px;
+	}
+
+	.charge {
+		margin-right: 50px;
+	}
+
+	.menuClick {
+		padding: 10px;
+		width: 8rem;
+		text-align: center;
+	}
+
+	.menuClick span {
+		font-size: 1rem;
 	}
 }
