@@ -345,7 +345,7 @@ header {
 
 	.chooseFood__img:last-of-type,
 	.chooseCoffee__img:last-of-type {
-		margin-bottom: 0;
+		margin-bottom: 8vmax;
 	}
 
 	.chooseFood__img img,
