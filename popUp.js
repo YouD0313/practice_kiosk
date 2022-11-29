@@ -12,6 +12,7 @@ const option = document.querySelectorAll('.option');
 const select = document.querySelector('#extra');
 let menu_price = 0;
 let priceVal = 0;
+let ice = false;
 let n = 0;
 
 // 키오스크화면 json 가져오기
@@ -137,7 +138,6 @@ coffeeImgWrap.forEach((img, idx) => {
 					// console.log($('.price').val());
 				});
 				select.addEventListener('change', function (e) {
-					let ice = false;
 					if (e.target.selectedIndex < 2) {
 						$('#extra option:eq(0)').prop('selected', true);
 						return;
