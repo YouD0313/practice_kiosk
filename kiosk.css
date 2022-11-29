@@ -313,6 +313,7 @@ header {
 
 	.chooseFood__popUp {
 		height: 47vmax;
+		width: 35vmax;
 		top: 10%;
 		left: 30%;
 	}
@@ -363,6 +364,10 @@ header {
 	.chooseCoffee__img img {
 		width: 30vmax;
 		height: 20vmax;
+	}
+
+	.chooseFood__popUp {
+		left: 8vmax;
 	}
 
 	.money__input__wrap {
