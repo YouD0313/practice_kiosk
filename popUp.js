@@ -141,6 +141,7 @@ coffeeImgWrap.forEach((img, idx) => {
 				});
 				select.addEventListener('change', function (e) {
 					if (e.target.selectedIndex < 2) {
+						$('#extra option:eq(0)').prop('selected', true);
 						return;
 					}
 					if (ice) {
@@ -186,14 +187,14 @@ select.addEventListener('change', function () {
 		case 1:
 			menu_price += parseInt(selectPriceValue);
 			priceVal = menu_price;
-			// console.log('case1', priceVal, 'menuprice', menu_price);
+			console.log('case1', priceVal, 'menuprice', menu_price);
 
 			break;
 		case 2:
 			//if (!ice) {
 			//menu_price = parseInt(menu_price) + parseInt(selectPriceValue);
 			//priceVal = menu_price;
-			// console.log('case2', priceVal, 'menuprice', menu_price);
+			console.log('case2', priceVal, 'menuprice', menu_price);
 			//ice = true;
 			//} else {
 			menu_price = parseInt(menu_price) + parseInt(selectPriceValue);
