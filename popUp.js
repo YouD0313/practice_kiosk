@@ -11,7 +11,7 @@ const money = document.querySelector('.money');
 const option = document.querySelectorAll('.option');
 const select = document.querySelector('#extra');
 let menu_price = 0;
-let ice = false;
+let priceVal = 0;
 let n = 0;
 
 // 키오스크화면 json 가져오기
@@ -82,7 +82,6 @@ foodImgWrap.forEach((img, idx) => {
 });
 
 //coffee
-let priceVal = 0;
 coffeeImgWrap.forEach((img, idx) => {
 	const idx6 = idx + 6;
 	img.addEventListener('click', () => {
@@ -101,11 +100,9 @@ coffeeImgWrap.forEach((img, idx) => {
 					$('.chooseFood__popUp__img > img').attr('src', data[idx6].imgUrl);
 					$('.chooseFood__popUp__img > img').attr('alt', data[idx6].alt);
 					$('.chooseFood__popUp__wrap > h1').text(data[idx6].name);
-					$('.popUp__spin__wrap > .price')
-						.text(data[idx6].value)
-						.val(data[idx6].value);
+					$('.wrap__top > .price').text(data[idx6].value).val(data[idx6].value);
 					menu_price = data[idx6].value;
-					$('.popUp__spin__wrap > button').attr('value', data[idx6].value);
+					$('.wrap__top > button').attr('value', data[idx6].value);
 					if (!!data[idx6].extra) {
 						$('#extra').css('display', 'block');
 						// option.forEach((opt, i) => {
@@ -140,6 +137,7 @@ coffeeImgWrap.forEach((img, idx) => {
 					// console.log($('.price').val());
 				});
 				select.addEventListener('change', function (e) {
+					let ice = false;
 					if (e.target.selectedIndex < 2) {
 						$('#extra option:eq(0)').prop('selected', true);
 						return;
@@ -203,6 +201,7 @@ select.addEventListener('change', function () {
 			//}
 			break;
 	}
+	$('.price').text(priceVal);
 
 	//
 	// if (selectedIndex == 1) {
@@ -215,7 +214,6 @@ select.addEventListener('change', function () {
 	// // console.log(sumVal);
 
 	// console.log('priceval', priceVal);
-	$('.price').text(priceVal);
 
 	//
 	// $('.option').each(function () {

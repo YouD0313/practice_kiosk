@@ -121,6 +121,15 @@ header {
 	padding: 0.8vmax 7vmax;
 }
 
+.wrap__top {
+	display: flex;
+}
+
+.wrap__bottom select {
+	height: 100%;
+	width: 90%;
+}
+
 .chooseFood__popUp__xmark {
 	display: flex;
 	justify-content: flex-end;
@@ -187,6 +196,8 @@ header {
 .chooseFood__text__wrap span,
 .chooseCoffee__text__wrap span {
 	font-size: 1.3rem;
+}
+.wrap__top .won {
 	margin-right: 20px;
 }
 
@@ -257,10 +268,32 @@ header {
 }
 
 /* media query */
-@media (max-width: 1024px) {
+@media (max-width: 1400px) {
 	.chooseFood__popUp {
-		height: 41vmax;
-		top: 30%;
+		height: 38vmax;
+		width: 32vmax;
+		left: 35vmax;
+	}
+
+	.popUp__spin__wrap {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.wrap__bottom #extra {
+		margin: 10px 0 0 0;
+		width: initial;
+		height: 2.5rem;
+	}
+
+	.chooseFood__popUp__img img {
+		width: 18vmax;
+	}
+}
+@media (max-width: 1050px) {
+	.chooseFood__popUp {
+		height: 45vmax;
+		top: 10%;
 	}
 
 	.money__input__wrap {
@@ -270,6 +303,11 @@ header {
 }
 
 @media (max-width: 786px) {
+	.chooseFood__popUp {
+		height: 47vmax;
+		top: 10%;
+		left: 30%;
+	}
 	.chooseFood__padding,
 	.chooseCoffee__padding {
 		padding: 0;
@@ -294,7 +332,7 @@ header {
 
 	.chooseFood__img img,
 	.chooseCoffee__img img {
-		width: 60vmax;
-		height: 40vmax;
+		width: 45vmax;
+		height: 30vmax;
 	}
 }
