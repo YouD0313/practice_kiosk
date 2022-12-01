@@ -86,7 +86,7 @@
 	{
 		"coffeeIndex": 2,
 		"imgUrl": "https://static.vecteezy.com/system/resources/previews/005/393/406/large_2x/cup-of-coffee-latte-with-heart-shape-on-old-wooden-background-in-the-morning-sunlight-free-photo.JPG",
-		"alt": "espresso",
+		"alt": "cafe latte",
 		"name": "카페라떼",
 		"price": "4,800원",
 		"value": 4800,
@@ -104,10 +104,10 @@
 	{
 		"coffeeIndex": 3,
 		"imgUrl": "https://image.edaily.co.kr/images/photo/files/NP/S/2017/03/PS17030800232.jpg",
-		"alt": "cafemoca",
+		"alt": "cafe mocha",
 		"name": "카페모카",
-		"price": "4,800원",
-		"value": 4800,
+		"price": "5,000원",
+		"value": 5000,
 		"extra": [
 			{ "id": 0, "extra": "+ 500 샷추가", "value": 500 },
 			{
