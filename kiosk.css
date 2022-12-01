@@ -304,7 +304,7 @@ header {
 
 @media (max-width: 786px) {
 	* {
-		overflow-x: auto !important;
+		/* overflow-x: auto !important; */
 	}
 
 	.chooseMenu__wrap {
