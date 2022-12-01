@@ -338,13 +338,13 @@ button.forEach((cart, idx) => {
 			console.log('spinvalue', parseInt(spin[idx].value));
 			console.log('pricetext', parseInt($('.price').text()));
 			sumText.value = sum + '원';
-			spin[idx].value = 1;
+			// spin[idx].value = 1;
 		} else {
 			sum += parseInt(button[idx].value) * parseInt(spin[idx].value);
 			console.log('spinvalue', parseInt(spin[idx].value));
 			console.log('pricetext', parseInt($('.price').text()));
 			sumText.value = sum + '원';
-			spin[idx].value = 1;
+			// spin[idx].value = 1;
 		}
 		// console.log('sum', sum);
 		// console.log('cart', cart);
