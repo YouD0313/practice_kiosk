@@ -288,6 +288,9 @@ function closeEvt(icon) {
 		$('#extra option:eq(0)').prop('selected', true);
 		//priceVal = 0;
 		//priceVal += parseInt($('.price').val());
+		for (let i = 0; i < spin.length; i++) {
+			spin[i].value = 1;
+		}
 	});
 }
 
